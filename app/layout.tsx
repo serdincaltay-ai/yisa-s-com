@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body className="bg-[#0a0a1a] text-slate-50 antialiased">
+      <body className="bg-[#060a13] text-[#f1f5f9] antialiased font-sans">
         <Header />
         <main className="min-h-screen">
           {children}

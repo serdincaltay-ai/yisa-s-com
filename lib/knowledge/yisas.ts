@@ -372,6 +372,7 @@ export const FOOTER = {
   links: {
     platform: [
       { href: '#ozellikler', label: 'Ozellikler' },
+      { href: '#branslar', label: 'Branslar' },
       { href: '#fiyatlar', label: 'Fiyatlandirma' },
       { href: '/franchise', label: 'Bayilik' },
       { href: '#demo', label: 'Demo' },
@@ -380,6 +381,7 @@ export const FOOTER = {
       { href: '/hakkimizda', label: 'Hakkimizda' },
       { href: '/blog', label: 'Blog' },
       { href: '/hakkimizda#iletisim', label: 'Iletisim' },
+      { href: '/magaza', label: 'Magaza' },
     ],
     legal: [
       { href: '/kvkk', label: 'KVKK Aydinlatma' },
