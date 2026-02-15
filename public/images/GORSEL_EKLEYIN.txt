@@ -1,0 +1,11 @@
+Bu klasöre aşağıdaki görselleri ekleyin (yisa-s-patron (6) veya (5) public/images içinden kopyalayabilirsiniz):
+
+- yisa-s-hero.jpg     → Hero arka plan ve sağ panel
+- branch-gymnastics.jpg
+- branch-volleyball.jpg
+- branch-basketball.jpg
+- branch-football.jpg
+- branch-tennis.jpg
+- branch-swimming.jpg
+
+Görseller yoksa Hero'da ve Branşlar bölümünde placeholder/404 görünebilir.

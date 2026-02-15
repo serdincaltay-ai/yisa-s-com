@@ -1,9 +1,7 @@
 // /app/layout.tsx
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import ChatWidget from '@/components/robot/ChatWidget'
+import ConditionalLayout from '@/components/layout/ConditionalLayout'
 import { BRAND } from '@/lib/knowledge/yisas'
 
 export const viewport: Viewport = {
@@ -53,13 +51,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body className="bg-[#0a0a1a] text-slate-50 antialiased">
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <ChatWidget />
+      <body className="bg-[#060a13] text-slate-50 antialiased">
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   )

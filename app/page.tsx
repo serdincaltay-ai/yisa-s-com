@@ -1,30 +1,40 @@
-// /app/page.tsx — Sıra: Hero → YİSA-S Robotu → Hizmetler → Branşlar → Demo → (mevcut bölümler) → Footer (layout)
-import HeroSection from '@/components/home/HeroSection'
-import RobotFaceSection from '@/components/home/RobotFaceSection'
-import HizmetlerSection from '@/components/home/HizmetlerSection'
-import BranslarSection from '@/components/home/BranslarSection'
-import DemoVideoSection from '@/components/home/DemoVideoSection'
-import StatsSection from '@/components/home/StatsSection'
-import FeaturesSection from '@/components/home/FeaturesSection'
-import AIEnginesSection from '@/components/home/AIEnginesSection'
-import PHVSection from '@/components/home/PHVSection'
-import PricingPreview from '@/components/home/PricingPreview'
-import CTASection from '@/components/home/CTASection'
+"use client"
+
+import { useState, useCallback } from "react"
+import { Intro } from "@/components/landing/intro"
+import { Navbar } from "@/components/landing/navbar"
+import { Hero } from "@/components/landing/hero"
+import { Showcase } from "@/components/landing/showcase"
+import { Branches } from "@/components/landing/branches"
+import { Features } from "@/components/landing/features"
+import { ClubPreview } from "@/components/landing/club-preview"
+import { Pricing } from "@/components/landing/pricing"
+import { DemoForm } from "@/components/landing/demo-form"
+import { Footer } from "@/components/landing/footer"
+import { Chatbot } from "@/components/landing/chatbot"
 
 export default function HomePage() {
+  const [introComplete, setIntroComplete] = useState(false)
+
+  const handleIntroComplete = useCallback(() => {
+    setIntroComplete(true)
+  }, [])
+
   return (
     <>
-      <HeroSection />
-      <RobotFaceSection />
-      <HizmetlerSection />
-      <BranslarSection />
-      <DemoVideoSection />
-      <StatsSection />
-      <FeaturesSection />
-      <AIEnginesSection />
-      <PHVSection />
-      <PricingPreview />
-      <CTASection />
+      {!introComplete && <Intro onComplete={handleIntroComplete} />}
+      <main className={`min-h-screen bg-[#060a13] text-white transition-opacity duration-500 ${introComplete ? "opacity-100" : "opacity-0"}`}>
+        <Navbar />
+        <Hero />
+        <Showcase />
+        <Branches />
+        <Features />
+        <ClubPreview />
+        <Pricing />
+        <DemoForm />
+        <Footer />
+        <Chatbot />
+      </main>
     </>
   )
 }
