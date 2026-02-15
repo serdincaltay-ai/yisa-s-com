@@ -98,6 +98,7 @@ export const BRANCHES = [
   {
     id: 'cimnastik',
     name: 'Cimnastik',
+    icon: '\u{1F938}',
     moves: 88,
     params: 12,
     ageGroup: '4-16 yas',
@@ -114,6 +115,7 @@ export const BRANCHES = [
   {
     id: 'voleybol',
     name: 'Voleybol',
+    icon: '\u{1F3D0}',
     moves: 45,
     params: 10,
     ageGroup: '6-18 yas',
@@ -130,6 +132,7 @@ export const BRANCHES = [
   {
     id: 'basketbol',
     name: 'Basketbol',
+    icon: '\u{1F3C0}',
     moves: 52,
     params: 11,
     ageGroup: '6-18 yas',
@@ -146,6 +149,7 @@ export const BRANCHES = [
   {
     id: 'futbol',
     name: 'Futbol',
+    icon: '\u{26BD}',
     moves: 60,
     params: 12,
     ageGroup: '5-18 yas',
@@ -162,6 +166,7 @@ export const BRANCHES = [
   {
     id: 'tenis',
     name: 'Tenis',
+    icon: '\u{1F3BE}',
     moves: 38,
     params: 9,
     ageGroup: '5-16 yas',
@@ -178,6 +183,7 @@ export const BRANCHES = [
   {
     id: 'yuzme',
     name: 'Yuzme',
+    icon: '\u{1F3CA}',
     moves: 42,
     params: 10,
     ageGroup: '4-16 yas',
@@ -284,6 +290,7 @@ export const PACKAGES = [
     currency: '$',
     period: 'ay',
     popular: false,
+    athleteLimit: 50,
     description: 'Yazilim + token',
     features: [
       { text: 'Tam panel erisimi', included: true },
@@ -305,6 +312,7 @@ export const PACKAGES = [
     currency: '$',
     period: 'ay',
     popular: true,
+    athleteLimit: 250,
     description: 'Sablon + logo + renk + token dahil',
     features: [
       { text: 'Standart paketteki her sey', included: true },
@@ -326,6 +334,7 @@ export const PACKAGES = [
     currency: '$',
     period: 'ay',
     popular: false,
+    athleteLimit: -1,
     description: 'Coklu tesis, ozel entegrasyon',
     features: [
       { text: 'Premium paketteki her sey', included: true },
@@ -460,6 +469,230 @@ export const ROBOT_ACTIONS = {
     'Hangi paket bana uygun?',
     'Bayilik nasil alinir?',
     'Demo alabilir miyim?',
+  ],
+} as const
+
+// ===============================================================
+// FEATURES (Neden YiSA-S kartlari)
+// ===============================================================
+
+export const FEATURES = [
+  {
+    id: 'analiz',
+    icon: '\u{1F4CA}',
+    title: '900 Alan Analiz',
+    description: 'Her sporcu 900 farkli parametrede degerlendirilir ve bilimsel rapor olusturulur.',
+  },
+  {
+    id: 'ai',
+    icon: '\u{1F916}',
+    title: '4 AI Robot',
+    description: 'Her gorev icin ozel tasarlanmis yapay zeka robotlari ile akilli otomasyon.',
+  },
+  {
+    id: 'phv',
+    icon: '\u{1F4C8}',
+    title: 'PHV Takibi',
+    description: 'Buyume plagi korumasi ve sakatlik onleme icin zirve boy artis hizi takibi.',
+  },
+  {
+    id: 'guvenlik',
+    icon: '\u{1F6E1}',
+    title: 'KVKK Uyumlu',
+    description: 'Cocuk veri guvenligi, on-premise isleme ve tam KVKK uyumluluk.',
+  },
+] as const
+
+// ===============================================================
+// FRANCHISE (Bayilik)
+// ===============================================================
+
+export const FRANCHISE = {
+  investment: {
+    entry: 50000,
+    monthly: 15000,
+    currency: '\u{20BA}',
+  },
+  benefits: [
+    'Kurumsal paket erisimi',
+    'Bolgesel tekel hakki',
+    'Egitim ve sertifika',
+    'Pazarlama destegi',
+    'Teknik altyapi ve destek',
+    'Marka kullanim hakki',
+  ],
+  requirements: [
+    'Spor sektoru deneyimi veya ilgisi',
+    'Minimum 3 yillik is deneyimi',
+    'Bolgesel pazar bilgisi',
+    'Yatirim kapasitesi',
+    'Girisimci ruh ve liderlik',
+  ],
+  process: [
+    { step: 1, title: 'Basvuru', description: 'Online formu doldurun' },
+    { step: 2, title: 'Degerlendirme', description: 'Basvurunuz incelenir' },
+    { step: 3, title: 'Gorusme', description: 'Detayli gorusme yapilir' },
+    { step: 4, title: 'Sozlesme', description: 'Anlasma imzalanir' },
+    { step: 5, title: 'Egitim', description: 'Kapsamli egitim alinir' },
+    { step: 6, title: 'Basla', description: 'Bayilik aktif edilir' },
+  ],
+} as const
+
+// ===============================================================
+// EVALUATION SYSTEM (900 Alan)
+// ===============================================================
+
+export const EVALUATION_SYSTEM = {
+  total: 900,
+  formula: '30 Ana Kategori x 30 Alt Alan = 900 Degerlendirme Noktasi',
+  categories: [
+    { id: 'fiziksel', icon: '\u{1F4AA}', name: 'Fiziksel Gelisim', description: 'Boy, kilo, vucut kompozisyonu' },
+    { id: 'teknik', icon: '\u{26BD}', name: 'Teknik Beceri', description: 'Brans bazli teknik analiz' },
+    { id: 'taktik', icon: '\u{1F9E0}', name: 'Taktiksel Zeka', description: 'Oyun okuma ve karar verme' },
+    { id: 'psikolojik', icon: '\u{1F9D8}', name: 'Psikolojik', description: 'Mental guc ve motivasyon' },
+    { id: 'sosyal', icon: '\u{1F465}', name: 'Sosyal Gelisim', description: 'Takim ici uyum ve liderlik' },
+    { id: 'motorik', icon: '\u{1F3C3}', name: 'Motorik Beceri', description: 'Koordinasyon ve ceviklik' },
+    { id: 'esneklik', icon: '\u{1F938}', name: 'Esneklik', description: 'Eklem hareketliligi' },
+    { id: 'dayaniklilik', icon: '\u{2764}', name: 'Dayaniklilik', description: 'Aerobik ve anaerobik kapasite' },
+    { id: 'kuvvet', icon: '\u{1F4A5}', name: 'Kuvvet', description: 'Kas gucu ve patlayicilik' },
+    { id: 'hiz', icon: '\u{26A1}', name: 'Hiz', description: 'Sprint ve reaksiyon suresi' },
+    { id: 'denge', icon: '\u{2696}', name: 'Denge', description: 'Statik ve dinamik denge' },
+    { id: 'ritim', icon: '\u{1F3B5}', name: 'Ritim', description: 'Hareket ritmi ve zamanlama' },
+    { id: 'algi', icon: '\u{1F441}', name: 'Algi', description: 'Gorsel ve mekansal algi' },
+    { id: 'beslenme', icon: '\u{1F34E}', name: 'Beslenme', description: 'Beslenme aliskanliklari' },
+    { id: 'uyku', icon: '\u{1F634}', name: 'Uyku', description: 'Uyku kalitesi ve suresi' },
+    { id: 'stres', icon: '\u{1F60C}', name: 'Stres Yonetimi', description: 'Yarisma stresi ve basi etme' },
+    { id: 'odaklanma', icon: '\u{1F3AF}', name: 'Odaklanma', description: 'Dikkat suresi ve konsantrasyon' },
+    { id: 'ozguven', icon: '\u{1F4AA}', name: 'Ozguven', description: 'Ozguven ve cesaret' },
+    { id: 'iletisim', icon: '\u{1F4AC}', name: 'Iletisim', description: 'Sozel ve sozel olmayan iletisim' },
+    { id: 'sakatlik', icon: '\u{1FA79}', name: 'Sakatlik Riski', description: 'Sakatlik gecmisi ve risk analizi' },
+    { id: 'buyume', icon: '\u{1F4C8}', name: 'Buyume Takibi', description: 'PHV ve buyume hizi' },
+    { id: 'genetik', icon: '\u{1F9EC}', name: 'Genetik Potansiyel', description: 'Aile gecmisi ve potansiyel' },
+    { id: 'oyun_zekasi', icon: '\u{265F}', name: 'Oyun Zekasi', description: 'Stratejik dusunme' },
+    { id: 'liderlik', icon: '\u{1F451}', name: 'Liderlik', description: 'Takim kaptanligi ve yon verme' },
+    { id: 'disiplin', icon: '\u{23F0}', name: 'Disiplin', description: 'Kurallara uyum ve sorumluluk' },
+    { id: 'yaraticilik', icon: '\u{1F3A8}', name: 'Yaraticilik', description: 'Yaratici problem cozme' },
+    { id: 'adaptasyon', icon: '\u{1F504}', name: 'Adaptasyon', description: 'Degisime uyum' },
+    { id: 'rekabet', icon: '\u{1F3C6}', name: 'Rekabet Gucu', description: 'Yarisma istegi ve hirs' },
+    { id: 'toparlanma', icon: '\u{1F504}', name: 'Toparlanma', description: 'Antrenmandan sonra iyilesme' },
+    { id: 'tutarlilik', icon: '\u{1F4CA}', name: 'Tutarlilik', description: 'Performans istikrari' },
+  ],
+} as const
+
+// ===============================================================
+// 10 PERSPEKTiF
+// ===============================================================
+
+export const PERSPECTIVES = [
+  { id: 'fiziksel', icon: '\u{1F4AA}', name: 'Fiziksel', description: 'Vucut olculeri ve fiziksel kapasite' },
+  { id: 'teknik', icon: '\u{26BD}', name: 'Teknik', description: 'Brans bazli teknik beceriler' },
+  { id: 'taktik', icon: '\u{1F9E0}', name: 'Taktik', description: 'Oyun zekasi ve strateji' },
+  { id: 'mental', icon: '\u{1F9D8}', name: 'Mental', description: 'Psikolojik guc ve motivasyon' },
+  { id: 'sosyal', icon: '\u{1F465}', name: 'Sosyal', description: 'Takim uyumu ve iletisim' },
+  { id: 'saglik', icon: '\u{2764}', name: 'Saglik', description: 'Genel saglik ve beslenme' },
+  { id: 'buyume', icon: '\u{1F4C8}', name: 'Buyume', description: 'PHV ve gelisim takibi' },
+  { id: 'potansiyel', icon: '\u{2B50}', name: 'Potansiyel', description: 'Gelecek projeksiyonu' },
+  { id: 'risk', icon: '\u{26A0}', name: 'Risk', description: 'Sakatlik ve asiri yuklenme' },
+  { id: 'performans', icon: '\u{1F3C6}', name: 'Performans', description: 'Yarisma ve musabaka analizi' },
+] as const
+
+// ===============================================================
+// 6 AI MOTORU
+// ===============================================================
+
+export const AI_ENGINES = [
+  {
+    id: 'analiz',
+    name: 'Analiz Motoru',
+    icon: '\u{1F9E0}',
+    color: '#8B5CF6',
+    role: 'Derin Sporcu Analizi',
+    description: 'Kapsamli sporcu degerlendirmesi, rapor olusturma ve stratejik oneri sistemi.',
+  },
+  {
+    id: 'goruntu',
+    name: 'Goruntu Motoru',
+    icon: '\u{1F4F7}',
+    color: '#06B6D4',
+    role: 'Gorsel Analiz',
+    description: 'Hareket analizi, form kontrolu ve teknik degerlendirme icin goruntu isleme.',
+  },
+  {
+    id: 'tahmin',
+    name: 'Tahmin Motoru',
+    icon: '\u{1F52E}',
+    color: '#10B981',
+    role: 'Gelecek Projeksiyonu',
+    description: 'Sporcu gelisim tahmini, potansiyel analizi ve kariyer yol haritasi.',
+  },
+  {
+    id: 'dogal_dil',
+    name: 'Dogal Dil Motoru',
+    icon: '\u{1F4AC}',
+    color: '#F59E0B',
+    role: 'Iletisim ve Raporlama',
+    description: 'Otomatik rapor yazimi, veli iletisimi ve chatbot destegi.',
+  },
+  {
+    id: 'guvenlik',
+    name: 'Guvenlik Motoru',
+    icon: '\u{1F6E1}',
+    color: '#EF4444',
+    role: 'Veri Guvenligi',
+    description: 'KVKK uyumluluk, veri sifreleme ve erisim kontrolu.',
+  },
+  {
+    id: 'optimizasyon',
+    name: 'Optimizasyon Motoru',
+    icon: '\u{26A1}',
+    color: '#3B82F6',
+    role: 'Performans Optimizasyonu',
+    description: 'Antrenman plani optimizasyonu, yuk dengeleme ve toparlanma yonetimi.',
+  },
+] as const
+
+// ===============================================================
+// PHV (Peak Height Velocity)
+// ===============================================================
+
+export const PHV = {
+  name: 'PHV Takibi',
+  fullName: 'Peak Height Velocity - Zirve Boy Artis Hizi',
+  description:
+    'Cocugun en hizli buyudugu donemi bilimsel olarak takip eder. Bu donemde buyume plaklari hassastir ve antrenman yogunlugunun dikkatli ayarlanmasi gerekir.',
+  warning:
+    'PHV doneminde asiri yuklenme, buyume plagi yaralanmalarina ve kalici hasara yol acabilir. Bu donemde antrenman yogunlugu mutlaka azaltilmalidir.',
+  benefits: [
+    'Buyume plagi korumasi',
+    'Sakatlik onleme',
+    'Antrenman yogunlugu ayarlama',
+    'Bireysel gelisim takibi',
+  ],
+  stages: [
+    {
+      id: 'pre-phv',
+      name: 'Pre-PHV',
+      description: 'Buyume henuz hizlanmamis. Temel beceri gelistirme donemi.',
+      risk: 'D\u00FC\u015F\u00FCk' as const,
+    },
+    {
+      id: 'onset-phv',
+      name: 'PHV Baslangici',
+      description: 'Buyume hizlanmaya basliyor. Dikkatli izleme gerekli.',
+      risk: 'Orta' as const,
+    },
+    {
+      id: 'peak-phv',
+      name: 'Zirve PHV',
+      description: 'En hizli buyume donemi. Antrenman yogunlugu azaltilmali.',
+      risk: 'Y\u00FCksek' as const,
+    },
+    {
+      id: 'post-phv',
+      name: 'Post-PHV',
+      description: 'Buyume yavasliyor. Kademeli olarak yogunluk arttirilabilir.',
+      risk: 'Orta' as const,
+    },
   ],
 } as const
 
