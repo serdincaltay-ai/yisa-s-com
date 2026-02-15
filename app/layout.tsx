@@ -1,9 +1,6 @@
 // /app/layout.tsx
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import ChatWidget from '@/components/robot/ChatWidget'
 import { BRAND } from '@/lib/knowledge/yisas'
 
 export const viewport: Viewport = {
@@ -54,12 +51,9 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className="bg-[#060a13] text-[#f1f5f9] antialiased font-sans">
-        <Header />
         <main id="main-content" className="min-h-screen">
           {children}
         </main>
-        <Footer />
-        <ChatWidget />
       </body>
     </html>
   )

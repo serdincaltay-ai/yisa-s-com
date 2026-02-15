@@ -1,23 +1,7 @@
-import IntroOverlay from '@/components/landing/IntroOverlay'
-import HeroSection from '@/components/landing/HeroSection'
-import InteractiveShowcase from '@/components/landing/InteractiveShowcase'
-import BranslarSection from '@/components/landing/BranslarSection'
-import FeaturesSection from '@/components/landing/FeaturesSection'
-import ClubPreview from '@/components/landing/ClubPreview'
-import PricingSection from '@/components/landing/PricingSection'
-import DemoForm from '@/components/landing/DemoForm'
-
 export default function HomePage() {
   return (
-    <div>
-      <IntroOverlay />
-      <HeroSection />
-      <InteractiveShowcase />
-      <BranslarSection />
-      <FeaturesSection />
-      <ClubPreview />
-      <PricingSection />
-      <DemoForm />
+    <div className="min-h-screen flex items-center justify-center bg-[#060a13]">
+      <h1 className="text-4xl font-bold text-white">YiSA-S Test Sayfasi</h1>
     </div>
   )
 }
