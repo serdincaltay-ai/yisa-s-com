@@ -9,7 +9,7 @@ import DemoForm from '@/components/landing/DemoForm'
 
 export default function HomePage() {
   return (
-    <>
+    <div>
       <IntroOverlay />
       <HeroSection />
       <InteractiveShowcase />
@@ -18,6 +18,6 @@ export default function HomePage() {
       <ClubPreview />
       <PricingSection />
       <DemoForm />
-    </>
+    </div>
   )
 }
