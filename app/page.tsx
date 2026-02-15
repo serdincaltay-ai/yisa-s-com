@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { Intro } from "@/components/landing/intro"
+import { IntroAnimation } from "@/components/intro/IntroAnimation"
 import { Navbar } from "@/components/landing/navbar"
 import { Hero } from "@/components/landing/hero"
 import { Showcase } from "@/components/landing/showcase"
@@ -22,7 +22,7 @@ export default function HomePage() {
 
   return (
     <>
-      {!introComplete && <Intro onComplete={handleIntroComplete} />}
+      {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
       <main className={`min-h-screen bg-[#060a13] text-white transition-opacity duration-500 ${introComplete ? "opacity-100" : "opacity-0"}`}>
         <Navbar />
         <Hero />
