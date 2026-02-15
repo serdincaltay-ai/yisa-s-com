@@ -55,7 +55,7 @@ export default function RootLayout({
     <html lang="tr">
       <body className="bg-[#060a13] text-[#f1f5f9] antialiased font-sans">
         <Header />
-        <main className="min-h-screen">
+        <main id="main-content" className="min-h-screen">
           {children}
         </main>
         <Footer />
