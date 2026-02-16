@@ -21,11 +21,12 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-bold text-white mb-3 font-mono">Platform</h4>
             <ul className="space-y-2">
-              {["Özellikler", "Fiyatlandırma", "Branşlar", "API Dokümantasyonu"].map((item) => (
-                <li key={item}>
-                  <span className="text-xs text-white/40 hover:text-white cursor-pointer transition-colors">{item}</span>
-                </li>
-              ))}
+              <li><a href="/#features" className="text-xs text-white/40 hover:text-white transition-colors">Özellikler</a></li>
+              <li><a href="/#pricing" className="text-xs text-white/40 hover:text-white transition-colors">Fiyatlandırma</a></li>
+              <li><a href="/#branches" className="text-xs text-white/40 hover:text-white transition-colors">Branşlar</a></li>
+              <li><a href="/franchise" className="text-xs text-white/40 hover:text-white transition-colors">Franchise</a></li>
+              <li><a href="/fuar" className="text-xs text-white/40 hover:text-white transition-colors">Fuar</a></li>
+              <li><a href="/sablonlar" className="text-xs text-white/40 hover:text-white transition-colors">Şablonlar</a></li>
             </ul>
           </div>
 

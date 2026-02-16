@@ -11,6 +11,8 @@ const links = [
   { label: "Demo", href: "/demo" },
   { label: "Mağaza", href: "/magaza" },
   { label: "Franchise", href: "/franchise" },
+  { label: "Fuar", href: "/fuar" },
+  { label: "Şablonlar", href: "/sablonlar" },
 ]
 
 export function Navbar() {
