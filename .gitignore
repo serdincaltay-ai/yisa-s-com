@@ -44,3 +44,6 @@ coverage/
 .env.local.txt 
 .env.local 
 .env 
+
+.vercel
+.env*.local
