@@ -74,7 +74,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="outline" size="sm" className="font-mono text-xs tracking-wider border-white/20 text-white bg-transparent hover:bg-white/5" onClick={() => window.location.href = "https://app.yisa-s.com"}>
+          <Button variant="outline" size="sm" className="font-mono text-xs tracking-wider border-white/20 text-white bg-transparent hover:bg-white/5" onClick={() => navigate("/auth/login")}>
             Giriş Yap
           </Button>
           <Button size="sm" className="bg-[#818cf8] text-white hover:bg-[#818cf8]/80 font-mono text-xs tracking-wider" onClick={() => navigate("#demo")}>
@@ -96,7 +96,7 @@ export function Navbar() {
               </button>
             ))}
             <div className="pt-3 border-t border-white/10 flex gap-2">
-              <Button variant="outline" size="sm" className="flex-1 font-mono text-xs bg-transparent border-white/20 text-white min-h-[44px]" onClick={() => { setOpen(false); window.location.href = "https://app.yisa-s.com" }}>
+              <Button variant="outline" size="sm" className="flex-1 font-mono text-xs bg-transparent border-white/20 text-white min-h-[44px]" onClick={() => navigate("/auth/login")}>
                 Giriş Yap
               </Button>
               <Button size="sm" className="flex-1 bg-[#818cf8] text-white font-mono text-xs min-h-[44px]" onClick={() => navigate("#demo")}>

@@ -457,7 +457,7 @@ export const NAV_LINKS = [
 
 export const CTA_LINKS = {
   demo: { href: '/demo', label: 'Tanıtım Talep Et' },
-  login: { href: '/giris', label: 'Giriş Yap' },
+  login: { href: '/auth/login', label: 'Giriş Yap' },
 } as const
 
 // ═══════════════════════════════════════════════════════════════
