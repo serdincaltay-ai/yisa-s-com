@@ -23,6 +23,7 @@ export default function DemoForm() {
       athlete_count: formData.get('athletes'),
       interested_package: formData.get('package'),
       message: formData.get('message'),
+      source: 'vitrin',
     }
 
     try {

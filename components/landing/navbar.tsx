@@ -9,7 +9,6 @@ const links = [
   { label: "Branşlar", href: "#branches" },
   { label: "Fiyatlar", href: "#pricing" },
   { label: "Demo", href: "/demo" },
-  { label: "Mağaza", href: "/magaza" },
   { label: "Franchise", href: "/franchise" },
   { label: "Fuar", href: "/fuar" },
   { label: "Şablonlar", href: "/sablonlar" },

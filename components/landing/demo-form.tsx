@@ -9,24 +9,29 @@ import { useInView } from "@/hooks/use-in-view"
 export function DemoForm() {
   const [form, setForm] = useState({ ad: "", email: "", telefon: "", kurum: "", brans: "", mesaj: "" })
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [errorMsg, setErrorMsg] = useState("")
   const { ref, visible } = useInView()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus("loading")
+    setErrorMsg("")
     try {
       const res = await fetch("/api/demo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, source: "vitrin" }),
       })
       if (res.ok) {
         setStatus("success")
         setForm({ ad: "", email: "", telefon: "", kurum: "", brans: "", mesaj: "" })
       } else {
+        const data = await res.json().catch(() => ({}))
+        setErrorMsg((data as { error?: string })?.error || "Bir hata oluştu. Lütfen tekrar deneyin.")
         setStatus("error")
       }
     } catch {
+      setErrorMsg("Bağlantı hatası. Lütfen tekrar deneyin.")
       setStatus("error")
     }
   }
@@ -135,8 +140,8 @@ export function DemoForm() {
 
               {status === "error" && (
                 <div className="flex items-center gap-2 text-xs text-red-400">
-                  <AlertCircle className="w-4 h-4" />
-                  Bir hata oluştu. Lütfen tekrar deneyin.
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  {errorMsg}
                 </div>
               )}
 

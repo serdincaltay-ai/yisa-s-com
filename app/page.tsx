@@ -8,6 +8,7 @@ import { Showcase } from "@/components/landing/showcase"
 import { Branches } from "@/components/landing/branches"
 import { Features } from "@/components/landing/features"
 import { ClubPreview } from "@/components/landing/club-preview"
+import { FuarBanner } from "@/components/landing/fuar-banner"
 import { Pricing } from "@/components/landing/pricing"
 import { DemoForm } from "@/components/landing/demo-form"
 import { Footer } from "@/components/landing/footer"
@@ -30,6 +31,7 @@ export default function HomePage() {
         <Branches />
         <Features />
         <ClubPreview />
+        <FuarBanner />
         <Pricing />
         <DemoForm />
         <Footer />

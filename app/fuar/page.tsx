@@ -148,13 +148,22 @@ export default function FuarPage() {
               </div>
             )}
 
-            <div className="mt-10 text-center">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/fuar/tour">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#00d4ff]/40 text-[#00d4ff] hover:bg-[#00d4ff]/10 font-medium px-8 py-6 rounded-xl"
+                >
+                  90 sn Fuar Turu (QR)
+                </Button>
+              </Link>
               <Link href="/#demo">
                 <Button
                   size="lg"
                   className="bg-[#e94560] hover:bg-[#e94560]/90 text-white font-medium px-8 py-6 rounded-xl"
                 >
-                  Demo İste
+                  Demo Talep Et
                 </Button>
               </Link>
             </div>
