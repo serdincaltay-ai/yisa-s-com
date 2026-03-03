@@ -81,7 +81,7 @@ export default function IntroOverlay() {
           <div className="relative z-10 text-center">
             <p className="text-2xl md:text-3xl font-semibold text-white min-h-[40px]">
               {typedText}
-              <span className="inline-block w-0.5 h-6 bg-[#00d4ff] ml-1 align-middle" style={{ animation: 'typewriter-cursor 0.8s infinite' }} />
+              <span className="inline-block w-0.5 h-6 bg-[#00d4ff] ml-1 align-middle" style={{ animation: 'blink 0.8s infinite' }} />
             </p>
 
             {/* Branches */}

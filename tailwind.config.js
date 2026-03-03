@@ -55,7 +55,7 @@ module.exports = {
         },
       },
       borderRadius: {
-        DEFAULT: 'var(--radius)',
+        DEFAULT: '0.5rem',
       },
     },
   },
