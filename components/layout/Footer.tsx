@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm">{'\u00d6zellikler'}</h3>
             <ul className="space-y-2.5">
-              {FOOTER.links.platform.map((link) => (
+              {FOOTER.links.product.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -63,7 +63,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm">{'Kaynaklar'}</h3>
             <ul className="space-y-2.5">
-              {FOOTER.links.resources.map((link) => (
+              {FOOTER.links.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -106,7 +106,7 @@ export default function Footer() {
               <span className="text-xs text-[#10b981] font-medium">{'Sistem Aktif'}</span>
             </div>
             {/* Version */}
-            <span className="text-xs text-[#64748b] font-mono">{BRAND.version}</span>
+            <span className="text-xs text-[#64748b] font-mono">v2.0</span>
             {/* Social */}
             {FOOTER.social.map((item) => (
               <a
