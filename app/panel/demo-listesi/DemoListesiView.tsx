@@ -6,19 +6,20 @@ import { ArrowLeft, Mail, Phone, Building2, Calendar } from 'lucide-react'
 
 export type DemoKayit = {
   id: string
-  ad: string | null
-  soyad: string | null
+  name: string | null
   email: string | null
-  telefon: string | null
-  sirket_adi: string | null
-  sporcu_sayisi: number | null
-  ilgilendigi_paket: string | null
-  mesaj: string | null
-  durum: string | null
-  olusturma_tarihi: string | null
+  phone: string | null
+  company_name: string | null
+  athlete_count: number | null
+  interested_package: string | null
+  message: string | null
+  status: string | null
+  created_at: string | null
+  utm_source?: string | null
 }
 
 const DURUM_ETIKET: { [key: string]: string } = {
+  new: 'Yeni',
   yeni: 'Yeni',
   iletisimde: 'İletişimde',
   demo_yapildi: 'Tanıtım yapıldı',
@@ -62,33 +63,35 @@ export function DemoListesiView(props: Props) {
               React.createElement('th', { className: 'px-4 py-3 text-slate-300 font-medium' }, 'E-posta'),
               React.createElement('th', { className: 'px-4 py-3 text-slate-300 font-medium' }, 'Telefon'),
               React.createElement('th', { className: 'px-4 py-3 text-slate-300 font-medium' }, 'Kurum'),
+              React.createElement('th', { className: 'px-4 py-3 text-slate-300 font-medium' }, 'Kaynak'),
               React.createElement('th', { className: 'px-4 py-3 text-slate-300 font-medium' }, 'Paket'),
               React.createElement('th', { className: 'px-4 py-3 text-slate-300 font-medium' }, 'Durum'),
               React.createElement('th', { className: 'px-4 py-3 text-slate-300 font-medium' }, 'Tarih'))),
           React.createElement('tbody', null,
             ...liste.map((k) =>
               React.createElement('tr', { key: k.id, className: 'border-b border-slate-800/50 hover:bg-slate-800/30' },
-                React.createElement('td', { className: 'px-4 py-3 text-white' },
-                  [k.ad, k.soyad].filter(Boolean).join(' ') || '—'),
+                React.createElement('td', { className: 'px-4 py-3 text-white' }, k.name || '—'),
                 React.createElement('td', { className: 'px-4 py-3 text-slate-300' },
                   k.email
                     ? React.createElement('a', { href: `mailto:${k.email}`, className: 'text-amber-400 hover:underline flex items-center gap-1' },
                       React.createElement(Mail, { size: 14 }), ' ', k.email)
                     : '—'),
                 React.createElement('td', { className: 'px-4 py-3 text-slate-300' },
-                  k.telefon ? React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(Phone, { size: 14 }), ' ', k.telefon) : '—'),
+                  k.phone ? React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(Phone, { size: 14 }), ' ', k.phone) : '—'),
                 React.createElement('td', { className: 'px-4 py-3 text-slate-300' },
-                  k.sirket_adi ? React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(Building2, { size: 14 }), ' ', k.sirket_adi) : '—'),
-                React.createElement('td', { className: 'px-4 py-3 text-slate-300' }, k.ilgilendigi_paket ?? '—'),
+                  k.company_name ? React.createElement('span', { className: 'flex items-center gap-1' }, React.createElement(Building2, { size: 14 }), ' ', k.company_name) : '—'),
+                React.createElement('td', { className: 'px-4 py-3 text-slate-300' },
+                  k.utm_source ? React.createElement('span', { className: 'text-xs text-slate-400' }, k.utm_source) : '—'),
+                React.createElement('td', { className: 'px-4 py-3 text-slate-300' }, k.interested_package ?? '—'),
                 React.createElement('td', { className: 'px-4 py-3' },
                   React.createElement('span', {
-                    className: `px-2 py-1 rounded-lg text-xs font-medium ${k.durum === 'yeni' ? 'bg-amber-500/20 text-amber-400' : k.durum === 'donustu' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-700 text-slate-400'}`,
-                  }, DURUM_ETIKET[k.durum ?? ''] ?? k.durum ?? '—')),
+                    className: `px-2 py-1 rounded-lg text-xs font-medium ${k.status === 'new' || k.status === 'yeni' ? 'bg-amber-500/20 text-amber-400' : k.status === 'donustu' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-700 text-slate-400'}`,
+                  }, DURUM_ETIKET[k.status ?? ''] ?? k.status ?? '—')),
                 React.createElement('td', { className: 'px-4 py-3 text-slate-400' },
-                  k.olusturma_tarihi
+                  k.created_at
                     ? React.createElement('span', { className: 'flex items-center gap-1' },
                       React.createElement(Calendar, { size: 14 }),
-                      new Date(k.olusturma_tarihi).toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }))
+                      new Date(k.created_at).toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }))
                     : '—')))))))
     )
   )

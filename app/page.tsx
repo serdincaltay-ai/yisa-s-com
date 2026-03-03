@@ -1,11 +1,42 @@
-import IntroOverlay from '@/components/landing/IntroOverlay'
+"use client"
+
+import { useState, useCallback } from "react"
+import { IntroAnimation } from "@/components/intro/IntroAnimation"
+import { Navbar } from "@/components/landing/navbar"
+import { Hero } from "@/components/landing/hero"
+import { Showcase } from "@/components/landing/showcase"
+import { Branches } from "@/components/landing/branches"
+import { Features } from "@/components/landing/features"
+import { ClubPreview } from "@/components/landing/club-preview"
+import { FuarBanner } from "@/components/landing/fuar-banner"
+import { Pricing } from "@/components/landing/pricing"
+import { DemoForm } from "@/components/landing/demo-form"
+import { Footer } from "@/components/landing/footer"
+import { Chatbot } from "@/components/landing/chatbot"
 
 export default function HomePage() {
-  console.log("[v0] HomePage with IntroOverlay rendering")
+  const [introComplete, setIntroComplete] = useState(false)
+
+  const handleIntroComplete = useCallback(() => {
+    setIntroComplete(true)
+  }, [])
+
   return (
-    <div>
-      <IntroOverlay />
-      <h1 className="text-4xl font-bold text-white text-center py-20">Landing Yukleniyor...</h1>
-    </div>
+    <>
+      {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
+      <main className={`min-h-screen bg-[#060a13] text-white transition-opacity duration-500 ${introComplete ? "opacity-100" : "opacity-0"}`}>
+        <Navbar />
+        <Hero />
+        <Showcase />
+        <Branches />
+        <Features />
+        <ClubPreview />
+        <FuarBanner />
+        <Pricing />
+        <DemoForm />
+        <Footer />
+        <Chatbot />
+      </main>
+    </>
   )
 }

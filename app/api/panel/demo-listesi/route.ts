@@ -28,8 +28,8 @@ export async function GET() {
     const client = supabaseAdmin ?? createClient(url, anonKey)
     const { data, error } = await client
       .from('demo_requests')
-      .select('id, ad, soyad, email, telefon, sirket_adi, sporcu_sayisi, ilgilendigi_paket, mesaj, durum, olusturma_tarihi')
-      .order('olusturma_tarihi', { ascending: false })
+      .select('id, name, email, phone, company_name, athlete_count, interested_package, message, status, created_at, utm_source')
+      .order('created_at', { ascending: false })
       .limit(200)
 
     if (error) {

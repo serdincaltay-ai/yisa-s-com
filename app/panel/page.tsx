@@ -96,6 +96,13 @@ export default function PanelPage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
+                  href="/patron/dashboard"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl transition-colors text-sm font-medium"
+                >
+                  <LayoutDashboard size={18} />
+                  Patron – Tanıtım onayı
+                </Link>
+                <Link
                   href="/panel/demo-listesi"
                   className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-colors text-sm font-medium"
                 >

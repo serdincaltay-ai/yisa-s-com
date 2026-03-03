@@ -1,0 +1,25 @@
+---
+description: yisa-s-com (Vitrin) penceresi — vitrin işlerini sırayla yap, bitir
+globs: 
+alwaysApply: true
+---
+
+# yisa-s-com (Vitrin) görev protokolü
+
+Bu workspace yisa-s-com (Vitrin sitesi — yisa-s.com). Patron paneli (app-yisa-s) veya tesis paneli (tenant-yisa-s) koduna dokunma.
+
+## Görevin
+
+Bu klasörde yapılacak **4 iş** var. Sırayla yap; birini bitirmeden sonrakine geçme.
+
+### İş listesi (1→4)
+
+1. **Vitrin ana sayfa + FuarBanner** — Ana sayfada Hero, Fuar & Tanıtım bölümü (FuarBanner), 90 sn Tur ve Hesaplama linkleri olmalı. Eksikse ekle; varsa kontrol et.
+2. **Demo formu** — Vitrinden gönderilen demo talebinde body'de source/utm_source "vitrin" olmalı; API app-yisa-s /api/demo veya /api/demo-requests'e gidiyorsa şema uyumunu kontrol et (name, email, phone, company_name, status vb.).
+3. **Fuar Demo Modu** — app/fuar/tour/page.tsx veya ilgili sayfa: 90 saniyelik otomatik tur, 6 adım; QR için sayfa URL'i (api.qrserver.com veya benzeri). app/fuar/page.tsx'te "90 sn Fuar Turu" butonu. Eksikse ekle; varsa kontrol et.
+4. **Eksik link ve kopya** — Tüm iç sayfalarda kırık link yok mu, vitrin metinleri (CTA, footer, demo butonu) tutarlı mı kontrol et; gerekirse düzelt.
+
+## Kurallar
+
+- Backend (fiyat hesaplama, demo kayıt API) app-yisa-s'tedir; burada sadece vitrin frontend (sayfalar, form UI, linkler).
+- Bir işi bitir, sonrakine geç. 4 iş bittikten sonra kullanıcıya "Vitrin 4 iş tamamlandı, app-yisa-s'e dönebilirsiniz" diye özet ver.
