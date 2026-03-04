@@ -1,4 +1,3 @@
-// Panel yollarını sunucu tarafında oturum ile korur; oturum yoksa /giris'e yönlendirir.
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
@@ -6,7 +5,6 @@ export async function middleware(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   if (!url || !key) {
-    // Supabase yapılandırılmamışsa paneli yine de kapalı tut: /panel* → /giris
     if (request.nextUrl.pathname.startsWith('/panel')) {
       return NextResponse.redirect(new URL('/giris', request.url))
     }
