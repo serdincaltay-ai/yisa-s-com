@@ -12,7 +12,8 @@ import { FuarBanner } from "@/components/landing/fuar-banner"
 import { Pricing } from "@/components/landing/pricing"
 import { DemoForm } from "@/components/landing/demo-form"
 import { Footer } from "@/components/landing/footer"
-import { Chatbot } from "@/components/landing/chatbot"
+import { ChatbotAvatar } from "@/components/landing/chatbot-avatar"
+import VitrinTabletFrame from "@/components/tablet/VitrinTabletFrame"
 
 export default function HomePage() {
   const [introComplete, setIntroComplete] = useState(false)
@@ -24,19 +25,21 @@ export default function HomePage() {
   return (
     <>
       {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
-      <main className={`min-h-screen bg-[#060a13] text-white transition-opacity duration-500 ${introComplete ? "opacity-100" : "opacity-0"}`}>
-        <Navbar />
-        <Hero />
-        <Showcase />
-        <Branches />
-        <Features />
-        <ClubPreview />
-        <FuarBanner />
-        <Pricing />
-        <DemoForm />
-        <Footer />
-        <Chatbot />
-      </main>
+      <VitrinTabletFrame>
+        <main className={`min-h-screen text-white transition-opacity duration-500 ${introComplete ? "opacity-100" : "opacity-0"}`}>
+          <Navbar />
+          <Hero />
+          <Showcase />
+          <Branches />
+          <Features />
+          <ClubPreview />
+          <FuarBanner />
+          <Pricing />
+          <DemoForm />
+          <Footer />
+          <ChatbotAvatar />
+        </main>
+      </VitrinTabletFrame>
     </>
   )
 }
