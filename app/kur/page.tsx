@@ -95,8 +95,8 @@ export default function KurPage() {
         setSubmitted(true)
       }
     } catch {
-      // Fallback — still show success since the request was sent
-      setSubmitted(true)
+      // Network error — request was NOT sent
+      alert("Bağlantı hatası. Lütfen tekrar deneyin.")
     } finally {
       setSubmitting(false)
     }

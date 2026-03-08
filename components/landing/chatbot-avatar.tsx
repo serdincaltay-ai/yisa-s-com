@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useMemo } from "react"
 import { MessageCircle, X, Send } from "lucide-react"
 import VitrinAvatar from "@/components/tablet/VitrinAvatar"
 
@@ -25,6 +25,7 @@ export function ChatbotAvatar() {
   const [input, setInput] = useState("")
   const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const sessionId = useMemo(() => crypto.randomUUID(), [])
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -51,7 +52,11 @@ export function ChatbotAvatar() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: [...messages, { role: "user", text }].map((m) => ({
+          message: text,
+          session_id: sessionId,
+          context: "website",
+          page_url: typeof window !== "undefined" ? window.location.pathname : "",
+          conversation_history: messages.map((m) => ({
             role: m.role === "bot" ? "assistant" : "user",
             content: m.text,
           })),
@@ -60,7 +65,7 @@ export function ChatbotAvatar() {
 
       if (res.ok) {
         const data = await res.json()
-        const reply = data?.reply || data?.content || "Bir hata oluştu, tekrar deneyin."
+        const reply = data?.data?.message || data?.reply || data?.content || "Bir hata oluştu, tekrar deneyin."
         setMessages((prev) => [...prev, { role: "bot", text: reply }])
       } else {
         setMessages((prev) => [...prev, { role: "bot", text: "Bağlantı hatası. Lütfen tekrar deneyin." }])
