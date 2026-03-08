@@ -93,6 +93,9 @@ export default function KurPage() {
       })
       if (res.ok) {
         setSubmitted(true)
+      } else {
+        const errData = await res.json().catch(() => null)
+        alert(errData?.error || "Bir hata oluştu. Lütfen tekrar deneyin.")
       }
     } catch {
       // Network error — request was NOT sent
