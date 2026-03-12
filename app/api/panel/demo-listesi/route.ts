@@ -12,7 +12,7 @@ export async function GET() {
   if (!url || !anonKey) {
     return NextResponse.json({ list: [], error: 'Yapılandırma eksik. Supabase URL ve anahtar tanımlı olmalı.' }, { status: 200 })
   }
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const supabaseAuth = createServerClient(url, anonKey, {
     cookies: {
       get(name: string) { return cookieStore.get(name)?.value },
